@@ -1,0 +1,220 @@
+/*Estilos para la agenda dinamica*/
+
+* {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #3b4e40;
+    font-family: 'Georgia', serif;
+}
+
+.estructura {
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenedor a la derecha */
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 0px 20px 20px;
+    background-color: #d9d2c5;
+}
+
+/* Contenedor que agrupa los detalles y botones */
+.panel-detalles {
+    display: flex;
+    flex-direction: column; /* Apila los bloques de detalles y botones */
+    gap: 1rem; /* Espaciado entre bloques */
+    max-width: 300px; /* Controla el ancho del panel de detalles */
+    padding: 1rem; /* Relleno opcional */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+.container {
+    width: calc(100% - 80px);
+    height: 1440px;
+    position: relative;
+    background-color: #f9f9f9;
+    overflow: hidden;
+
+    /* Fondo de cuadrícula */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: calc(100% / 7) calc(100% / 144); /* Tamaño de las celdas */    
+}
+
+.scroll-wrapper {
+    width: calc(70% + 80px); /* Suma el ancho de las horas */
+    max-height: 80vh; /* Limita la altura al 80% de la ventana */
+    overflow-y: auto; /* Habilita desplazamiento vertical */
+    display: flex; /* Organiza los elementos internos en fila */
+    flex-direction: row; /* Asegura que estén alineados de izquierda a derecha */
+    position: relative;
+    background-color: #f0f0f0; /* Fondo opcional */
+}
+
+/* Estilo base para todos los bloques */
+.bloque {
+    width: calc(100% / 7);
+    border-radius: 2px;
+    padding: 0px;
+    margin: 0px;
+    color: #fff;
+    font-size: 1.2em;
+    touch-action: none;
+    user-select: none;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Genéricos: funcionan como hasta ahora */
+.bloque-genérico {
+    border: 1px solid transparent; /* Sin borde adicional */
+}
+
+/* Prioritarios: Texto subrayado y cursivo */
+.bloque-prioritario {
+    font-style: italic; /* Hace el texto cursivo */
+    text-decoration: underline; /* Subraya el texto */
+    color: white;  /*Asegura buen contraste */
+}
+
+/* Wildblocks: siempre blancos */
+.bloque-wildblock {
+    background-color: #ffffff !important; /* Siempre blanco */
+    border: 2px dashed black; /* Diferenciador adicional */
+    color: black; /* Contraste */
+}
+
+/* Estilos para el indicador de horas */
+.horario {
+    width: 80px;
+    background: #eaeaea;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Asegura el inicio superior */
+    align-items: stretch; /* Asegura que las horas ocupen todo el ancho */
+}
+
+.hora {
+    height: calc(1440px / 24); /* Cada hora ocupa un segmento proporcional */
+    line-height: calc(1440px / 24); /* Centra el texto verticalmente */
+    text-align: center; /* Centra el texto horizontalmente */
+    border-bottom: 1px solid #ddd; /* Línea divisoria */
+    font-size: 14px;
+    color: #3b4e40;
+    background-color: #c5cbb3;
+    box-sizing: border-box; /* Incluye bordes/márgenes en el cálculo de altura */
+}
+.hora-actual {
+    background-color: #3b4e40; 
+    font-weight: bold; 
+    color: #c5cbb3; 
+}
+
+/* Estilos para los indicadores de días */
+.estructuraBanner {
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenedor a la derecha */
+    align-items: flex-start;
+    background-color: #d9d2c5;
+}
+
+.semana {
+    display: flex;
+    justify-content: space-between; /* Espaciado uniforme entre días */
+    align-items: center;
+    width: calc(70% - 44px);
+    margin-left: auto; /* Empuja todo el contenedor hacia la derecha */
+    margin-right: 37px; /* Ajusta el margen derecho */
+    padding: 10px 0; /* Espaciado vertical */
+    background: #c5cbb3; /* Fondo similar al horario */
+    border: 1px solid #ccc; /* Línea de separación */
+}
+
+.dia {
+    width: calc(100% / 7); /* Divide el espacio restante en 7 días */
+    flex: none; /* Asegura que cada día tenga un ancho fijo calculado */
+    text-align: center; /* Centrar el texto */
+    font-size: 14px;
+    color: #3b4e40;
+    border-right: 1px solid #ddd; /* Línea divisoria entre días */
+}
+
+.dia:last-child {
+    border-right: none; /* Elimina la línea derecha del último día */
+}
+.dia-actual {
+    background-color: #3b4e40; 
+    font-weight: bold; 
+    color: #c5cbb3; 
+}
+
+
+/* Estilos para el panel de detalles */
+.detalles-bloque {
+    width: 250px; /* Ajusta el ancho según tu diseño */
+    padding: 20px;
+    align-self: flex-start;
+    margin-right: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #333;
+}
+
+.color-show{
+    width: 80%;
+    align-self: center;
+    background-color: #f9f9f9;
+    height: 5px;
+}
+
+.detalles-bloque h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.detalles-bloque p {
+    margin: 8px 0;
+}
+
+/* Estilos para los botones */
+.botones {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px; /* Separar los botones de la agenda */
+}
+
+.botones .btn {
+    flex: 1 1 calc(50% - 0.5rem); /* Botones al 50% del ancho */
+    padding: 0.5rem 1rem;
+    background-color: #3b4e40;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    margin-bottom: 10px;
+}
+
+.btn.disabled {
+    background-color: #ccc; 
+    color: #666; 
+    cursor: not-allowed; 
+    pointer-events: none; 
+}
+
+/* Colores de los botones */
+.botones .btn:hover {
+    background-color: #2a3c2d; /* Color más oscuro al pasar el cursor */
+}
+

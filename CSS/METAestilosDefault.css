@@ -1,0 +1,49 @@
+/* Para la pagina sin seleccionar ni una agenda */
+
+.agenda-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f9fa; /* Color suave */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.agenda-card h1 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+.agenda-card p {
+    color: #555;
+    font-size: 1.2rem;
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#nav-tab:hover {
+    background-color: #7a8c55 !important; /* Cambia el color de fondo en hover */
+    color: white; /* Opcional: Cambia el color del texto */
+}
+
+/* Estilo cuando la página está activa */
+.nav-tab.active-tab {
+    background-color: #7a8c55 !important; /* Mantén el mismo color */
+    color: white; /* Opcional: Cambia el color del texto */
+}
+
+/* Opcional: Suavizar la transición del cambio de color */
+.nav-tab {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

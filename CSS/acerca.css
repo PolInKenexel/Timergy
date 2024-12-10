@@ -1,0 +1,143 @@
+/* Colores personalizados */
+.custom-header {
+    background-color: #7a8c55;
+    color: white; /* Asegúrate de que el texto sea legible */
+}
+
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+}
+
+/* Hero Section */
+.hero {
+    background: url('img/hero-image.png') center/cover no-repeat; /* Ruta de tu imagen */
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen para resaltar el texto */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+}
+
+.cta-button {
+    padding: 0.5rem 2rem;
+    background-color: #5e6b40;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #7a8c55;
+}
+
+/* Nueva sección */
+.feature-section {
+    background-color: #d9dfd4;
+    padding: 3rem 0;
+}
+
+.feature-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #4b5320;
+}
+
+.feature-section p {
+    font-size: 1rem;
+    color: #4b5320;
+    margin-bottom: 1rem;
+}
+
+.feature-section .btn {
+    background-color: #4b5320;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.6rem 1.5rem;
+}
+
+.feature-section .btn:hover {
+    background-color: #7a8c55;
+}
+
+.feature-section img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Subtítulo */
+.section-subtitle {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4b5320;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+}
+
+.bg-light-green {
+    background-color: #f4f9f4;
+}
+.section-title {
+    color: #2f4f2f;
+    font-family: 'Georgia', serif;
+}
+.section-subtitle {
+    color: #4f4f4f;
+    font-family: 'Georgia', serif;
+}
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+.feature-list li {
+    margin-bottom: 10px;
+}
+.energy-types li {
+    margin-bottom: 8px;
+}
+.image-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.custom-header {
+    background-color: #7a8c55;
+    color: white; /* Asegúrate de que el texto sea legible */
+}

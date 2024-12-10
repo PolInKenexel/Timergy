@@ -1,0 +1,14 @@
+/* Ajustar tamaño y estilo de imágenes */
+.img-fluid {
+    max-width: 75%; /* Cambiar tamaño de las imágenes */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra alrededor de las imágenes */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto hover para las imágenes */
+.img-fluid:hover {
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+    filter: brightness(1.1); /* Aumentar brillo */
+}
